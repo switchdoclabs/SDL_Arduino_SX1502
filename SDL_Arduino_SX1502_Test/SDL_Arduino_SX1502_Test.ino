@@ -1,4 +1,8 @@
-
+//
+// SDL_Arduino_SX1502_Test.ino
+// SwitchDoc Labs
+// August 2015
+// http://www.switchdoc.com/8-gpio-i2c-extender-board/
 
 
 #include <Wire.h>
@@ -74,6 +78,9 @@ void loop() {
     
   while (1)
   {
+    
+    // loop about on IO 0 to see the LED blink
+    
     Serial.println("----------------");
     sx1502.writeGPIO(0x01);
     delay(1000);
@@ -85,41 +92,8 @@ void loop() {
     sx1502.writeGPIO(0x00);
     delay(1000);
     Serial.println("----------------");
-      Serial.println("----------------");
-    sx1502.writeGPIO(0x02);
-    delay(1000);
-    Serial.println("++++++++++++++");
-    value = sx1502.readGPIO();
-    Serial.print("GPIO Value =");
-    Serial.println(value, HEX);
-    
-    sx1502.writeGPIO(0x00);
-    delay(1000);
-    Serial.println("----------------");
-    
-    Serial.println("----------------");
-    sx1502.writeGPIO(0x04);
-    delay(1000);
-    Serial.println("++++++++++++++");
-    value = sx1502.readGPIO();
-    Serial.print("GPIO Value =");
-    Serial.println(value, HEX);
-    
-    sx1502.writeGPIO(0x00);
-    delay(1000);
     Serial.println("----------------");
    
-    Serial.println("----------------");
-    sx1502.writeGPIO(0x08);
-    delay(1000);
-    Serial.println("++++++++++++++");
-    value = sx1502.readGPIO();
-    Serial.print("GPIO Value =");
-    Serial.println(value, HEX);
-    
-    sx1502.writeGPIO(0x00);
-    delay(1000);
-    Serial.println("----------------");
     
   }
   
